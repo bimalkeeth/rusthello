@@ -4,7 +4,9 @@ use sample::iterators;
 use std::io;
 use crate::iterators::iterators::{iterator_one, tuple_show, vectors_return};
 use sample::structures;
-use crate::structures::show_struct;
+use sample::matching;
+use crate::matching::Suit::{Club, Diamond, Heart, Spade};
+
 
 #[allow(unused_variables)]
 
@@ -42,7 +44,12 @@ fn main() {
     }
 
     tuple_show();
-    show_struct()
+    structures::show_struct();
+
+    matching::print_choice(Heart);
+    matching::print_choice(Diamond);
+    matching::print_choice(Spade);
+    matching::print_choice(Club);
 }
 
 fn say_hi(name :&str) {
