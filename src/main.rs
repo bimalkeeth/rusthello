@@ -2,7 +2,9 @@ mod sample;
 use sample::data2;
 use sample::iterators;
 use std::io;
-use crate::iterators::iterators::{iterator_one, vectors_return};
+use crate::iterators::iterators::{iterator_one, tuple_show, vectors_return};
+use sample::structures;
+use crate::structures::show_struct;
 
 #[allow(unused_variables)]
 
@@ -32,10 +34,15 @@ fn main() {
 
     let vecs=vectors_return();
 
-    for v in &vecs{
-        println!("{}",v)
+    for v in vecs.iter(){
+
+        let print=|val:i32|{println!("{}",val *5);};
+        print(*v);
+
     }
 
+    tuple_show();
+    show_struct()
 }
 
 fn say_hi(name :&str) {

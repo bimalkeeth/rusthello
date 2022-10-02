@@ -15,4 +15,16 @@ pub mod iterators{
       return list
   }
 
+  pub fn tuple_show() {
+      let mut  person:(&str,i64,bool)=("Bimal",56,true);
+      println!("{:?}",person);
+
+      println!("{:?}",person.0);
+
+      person.0="Smith";
+
+      println!("{:?}",person.0);
+
+  }
+
 }
