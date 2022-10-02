@@ -1,8 +1,8 @@
 mod sample;
 use sample::data2;
 use sample::iterators;
-use std::{io};
-use crate::iterators::iterators::iterator_one;
+use std::io;
+use crate::iterators::iterators::{iterator_one, vectors_return};
 
 #[allow(unused_variables)]
 
@@ -16,7 +16,7 @@ fn main() {
             println!("you said {}",input);
 
             let greeting=say_hello(&mut &input);
-            println!("{}",greeting);
+            println!("{:?}",greeting);
         },
         Err(e)=>{
             println!("something went wrong {}",e);
@@ -30,6 +30,11 @@ fn main() {
 
     iterator_one();
 
+    let vecs=vectors_return();
+
+    for v in &vecs{
+        println!("{}",v)
+    }
 
 }
 
