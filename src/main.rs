@@ -1,4 +1,9 @@
-use std::io;
+mod sample;
+use sample::data2;
+use sample::iterators;
+use std::{io};
+use crate::iterators::iterators::iterator_one;
+
 #[allow(unused_variables)]
 
 fn main() {
@@ -23,12 +28,15 @@ fn main() {
         say_hi(d);
     }
 
+    iterator_one();
 
 
 }
 
-fn say_hi(name :&str){
-    println!("hi {}",name)
+fn say_hi(name :&str) {
+    println!("hi {}", name);
+    data2::say_bad_hello();
+    sample::data::say_bad_hello2();
 }
 
 fn say_hello(name: &mut &String)->String {
